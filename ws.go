@@ -52,9 +52,6 @@ func wsHandler (w http.ResponseWriter, r *http.Request) {
 			break
 		}
 
-
-
-
 	}
 }
 
