@@ -91,8 +91,7 @@ func main() {
 			}
 			TIMESWAIT = 0
 			go getInput(input)
-		case s := <-interrupt:
-			fmt.Println(s)
+		case <-interrupt:
 			log.Println("Caught interrupt signal - quitting!")
 			err := c.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, ""))
 			if err != nil {
